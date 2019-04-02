@@ -36,7 +36,8 @@ class MainActivity : AppCompatActivity() {
         adapter = PostAdapter(object : RecyclerPostListener {
             override fun onClick(post: Post, position: Int) {
                 var intent = Intent(this@MainActivity, DetailActivity::class.java)
-                intent.putExtra("imageUrl", post.body)
+                intent.putExtra("title", post.title)
+                intent.putExtra("body", post.body)
                 startActivity(intent)
             }
         })
